@@ -1,38 +1,64 @@
+import Image from "next/image"
+
 export function About() {
   return (
     <section id="about" className="py-20 md:py-32">
-      <div className="max-w-4xl mx-auto space-y-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-balance">About Me</h2>
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-4xl md:text-5xl font-bold mb-12">About Me</h2>
 
-        <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
-          <p className="text-pretty">
-            I'm a software engineering student at the{" "}
-            <span className="text-foreground font-medium">Polytechnic School of Sousse, Tunisia</span>, with a deep
-            passion for artificial intelligence and data science. My journey in tech has been marked by hands-on
-            experience in machine learning, computer vision, and full-stack development.
-          </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          {/* Image with decorative elements */}
+          <div className="flex justify-center md:justify-start">
+            <div className="relative w-56 h-72">
+              {/* Decorative blue background */}
+              <div className="absolute inset-0 bg-blue-100 rounded-3xl transform -rotate-6"></div>
+              
+              {/* Image container */}
+              <div className="absolute inset-0 bg-white rounded-3xl overflow-hidden shadow-lg">
+                <Image
+                  src="/profile.jpg"
+                  alt="Nour Maatouk"
+                  fill
+                  className="object-cover"
+                />
+              </div>
 
-          <p className="text-pretty">
-            Throughout my academic career, I've had the privilege of working on cutting-edge research projects, from
-            developing <span className="text-accent font-medium">GraphRAG-based multi-agent systems</span> to analyzing{" "}
-            <span className="text-accent font-medium">human motion using AI and computer vision</span>. My work has
-            consistently focused on applying AI to solve real-world problems.
-          </p>
+              {/* Blue circle accent - top right */}
+              <div className="absolute -top-4 -right-4 w-10 h-10 bg-blue-500 rounded-full shadow-lg"></div>
 
-          <p className="text-pretty">
-            I'm particularly proud of my competitive achievements, having secured{" "}
-            <span className="text-accent font-medium">first place in multiple AI challenges</span> and technical
-            competitions. These experiences have sharpened my problem-solving abilities and reinforced my commitment to
-            innovation in technology.
-          </p>
+              {/* Purple circle accent - bottom left */}
+              <div className="absolute -bottom-4 -left-4 w-10 h-10 bg-purple-500 rounded-full shadow-lg"></div>
 
-          <p className="text-pretty">
-            Currently, I'm seeking a{" "}
-            <span className="text-foreground font-medium">final-year internship (PFE) opportunity</span> to conduct
-            research and contribute to advanced AI-driven projects. I'm fluent in English, French (DELF B2), and Arabic,
-            enabling me to collaborate effectively in diverse international environments.
-          </p>
+              {/* Pink accent line - right side */}
+              <div className="absolute right-0 top-1/2 transform translate-x-8 -translate-y-1/2">
+                <div className="w-1 h-16 bg-pink-300 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Text content */}
+          <div className="space-y-4 text-base leading-relaxed text-foreground">
+            <p>
+              <span className="font-semibold">Software Engineering student</span> at the{" "}
+              <span className="font-semibold">Polytechnic School of Sousse, Tunisia</span>, passionate about{" "}
+              <span className="font-semibold">AI and data science</span>. I've built hands-on experience in{" "}
+              <span className="font-semibold">machine learning, computer vision, and full-stack development</span> through
+              research and real-world projects — from{" "}
+              <span className="font-semibold">GraphRAG-based multi-agent systems to human motion analysis</span> using
+              AI.
+            </p>
+
+            <p>
+              <span className="font-semibold">Winner of several AI and tech competitions</span>. I thrive on solving
+              complex problems and driving innovation. I'm now seeking a <span className="font-semibold">final-year
+              internship (PFE)</span> to contribute to advanced AI-driven projects.
+              <span className="font-semibold"> Trilingual in English, French (DELF B2), and Arabic.</span> I collaborate
+              effectively in international environments.
+            </p>
+          </div>
         </div>
+
+        <hr className="my-12 border-border" />
       </div>
     </section>
   )

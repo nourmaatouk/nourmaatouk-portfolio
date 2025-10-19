@@ -95,25 +95,7 @@ export function Contact() {
           </Card>
         </div>
 
-        <Card className="border-accent/50 bg-accent/5">
-          <CardHeader>
-            <CardTitle className="text-xl">Volunteer Experience</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3 text-sm text-muted-foreground">
-            <div>
-              <p className="font-medium text-foreground">Founder and Chair • IEEE EPS SIGHT</p>
-              <p>Jun 2024 - Feb 2025 • Led the chapter, organized events, and coordinated regular meetings.</p>
-            </div>
-            <div>
-              <p className="font-medium text-foreground">Founder and General Secretary • IEEE EPS CS SBC</p>
-              <p>Jan 2024 - Jan 2025 • Managed chapter operations, documented meetings, and wrote detailed reports.</p>
-            </div>
-            <div>
-              <p className="font-medium text-foreground">Technical Team Volunteer • ACM EPS</p>
-              <p>Oct 2022 - Jul 2023 • Participated in TCPC 2023 and TCPC 2025, supporting technical events.</p>
-            </div>
-          </CardContent>
-        </Card>
+        
       </div>
 
       <footer className="mt-20 pt-8 border-t border-border text-center text-sm text-muted-foreground">
