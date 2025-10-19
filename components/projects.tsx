@@ -19,7 +19,7 @@ const projects = [
       github: "#",
       demo: "#"
     },
-    tags: ["Microservices", "REST", "GraphQL", "Docker", "MongoDB", "Node.js"],
+    tags: ["Microservices", "REST", "GraphQL", "Docker", "MongoDB", "Node.js"]
   },
   {
     title: "Predicting Arrest Outcomes in Los Angeles",
@@ -36,7 +36,7 @@ const projects = [
       github: "#",
       demo: "#"
     },
-    tags: ["Machine Learning", "Data Analysis", "Python", "Visualization", "Ensemble Methods"],
+    tags: ["Machine Learning", "Data Analysis", "Python", "Visualization", "Ensemble Methods"]
   },
   {
     title: "Burnout Shield - Mental Health AI",
@@ -53,7 +53,7 @@ const projects = [
       github: "#",
       demo: "#"
     },
-    tags: ["AI", "Time Series", "LLM", "Wearables", "Real-time Processing"],
+    tags: ["AI", "Time Series", "LLM", "Wearables", "Real-time Processing"]
   },
   {
     title: "FungiScan AI - Disease Detection",
@@ -70,8 +70,8 @@ const projects = [
       github: "#",
       demo: "#"
     },
-    tags: ["Computer Vision", "CNN", "TensorFlow", "Streamlit", "MobileNetV2"],
-  },
+    tags: ["Computer Vision", "CNN", "TensorFlow", "Streamlit", "MobileNetV2"]
+  }
 ]
 
 export function Projects() {
