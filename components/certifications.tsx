@@ -1,5 +1,5 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+"use client";
+import { useRouter } from "next/navigation"
 import { Award } from "lucide-react"
 
 const certifications = [
@@ -54,38 +54,45 @@ const certifications = [
 ]
 
 export function Certifications() {
+  const router = useRouter();
+  function slugify(text: string) {
+    return text
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)+/g, '');
+  }
   return (
-    <section id="certifications" className="py-20 md:py-32 bg-secondary/20">
-      <div className="max-w-4xl mx-auto space-y-12">
-        <div className="space-y-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-balance">Certifications</h2>
-          <p className="text-lg text-muted-foreground text-pretty">
-            Professional certifications demonstrating expertise in AI, machine learning, and cloud technologies.
-          </p>
-        </div>
-
-        <div className="grid gap-4 md:grid-cols-2">
+    <section id="certifications" className="py-20 md:py-32">
+      <div className="max-w-6xl mx-auto px-2">
+        <h2 className="text-4xl md:text-5xl font-bold mb-10">Certifications</h2>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {certifications.map((cert, index) => (
-            <Card key={index} className="border-border hover:border-accent/50 transition-colors">
-              <CardHeader className="pb-3">
-                <div className="flex items-start gap-3">
-                  <div className="p-2 rounded-lg bg-accent/10 text-accent">
-                    <Award className="h-5 w-5" />
-                  </div>
-                  <div className="flex-1 space-y-1">
-                    <CardTitle className="text-base leading-tight text-balance">{cert.title}</CardTitle>
-                    <CardDescription className="text-sm">
-                      {cert.issuer} • {cert.date}
-                    </CardDescription>
-                  </div>
+            <div
+              key={index}
+              className="bg-white border border-[#2176ff] rounded-xl p-5 flex flex-col justify-between min-h-[210px] transition-all duration-200 hover:shadow-lg hover:border-[#2176ff] hover:bg-[#f5faff] group"
+            >
+              <div className="flex items-start gap-3 mb-2">
+                <div className="p-2 rounded-lg bg-[#e3f0ff] text-[#2176ff] flex items-center justify-center group-hover:bg-[#e3f0ff] group-hover:text-[#2176ff]">
+                  <Award className="h-5 w-5" />
                 </div>
-              </CardHeader>
-              <CardContent>
-                <Badge variant="secondary" className="text-xs">
-                  {cert.category}
-                </Badge>
-              </CardContent>
-            </Card>
+                <div>
+                  <div className="font-semibold text-base leading-tight text-black mb-1 group-hover:text-black">{cert.title}</div>
+                  <div className="text-sm text-black/70 mb-2 group-hover:text-black/70">{cert.issuer} • {cert.date}</div>
+                  <div className="font-medium text-black text-sm mb-4 group-hover:text-black">{cert.category}</div>
+                </div>
+              </div>
+              <button
+                className="mt-auto bg-white border border-[#2176ff] text-[#2176ff] rounded-md px-4 py-2 flex items-center gap-2 text-base font-semibold transition-colors w-full justify-center focus:outline-none focus:ring-2 focus:ring-[#2176ff] focus:ring-offset-2 hover:bg-[#2176ff] hover:text-white hover:border-[#2176ff]"
+                type="button"
+                tabIndex={0}
+                onClick={() => router.push(`/certifications/${slugify(cert.title)}`)}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75A2.25 2.25 0 0014.25 4.5h-7.5A2.25 2.25 0 004.5 6.75v10.5A2.25 2.25 0 006.75 19.5h10.5A2.25 2.25 0 0019.5 17.25V12.75M16.5 10.5l-9 9m9-9h-6.75" />
+                </svg>
+                Read More
+              </button>
+            </div>
           ))}
         </div>
       </div>
