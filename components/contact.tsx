@@ -99,7 +99,19 @@ export function Contact() {
       </div>
 
       <footer className="mt-20 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-        <p>© 2025 Nour Maatouk. Built with Next.js and Tailwind CSS.</p>
+        <p className="text-sm">
+          © Copyright <span className="font-medium">Nour Maatouk.</span> All Rights Reserved
+        </p>
+        <p className="text-sm mt-1">
+          Designed by{' '}
+          <a
+            href="/"
+            aria-label="Designed by Nour Maatouk"
+            className="font-medium text-accent hover:underline"
+          >
+            Nour Maatouk
+          </a>
+        </p>
       </footer>
     </section>
   )

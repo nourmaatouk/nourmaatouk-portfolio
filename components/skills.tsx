@@ -20,25 +20,28 @@ export function Skills() {
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-20">Technologies & Tools</h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-16 items-center justify-items-center">
+        <div className="flex justify-center">
+          <div className="inline-grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-12 gap-y-12 items-center justify-items-center">
           {technologies.map((tech, index) => (
             <a
               key={index}
               href={tech.wiki}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-full h-24 transition-transform hover:scale-110 cursor-pointer"
+              aria-label={`Learn more about ${tech.name}`}
+              className="flex items-center justify-center w-auto h-36 transition-transform hover:scale-110 cursor-pointer"
               title={`Learn more about ${tech.name}`}
             >
               <Image
                 src={tech.logo}
                 alt={tech.name}
-                width={120}
-                height={80}
-                className="object-contain"
+                width={180}
+                height={100}
+                className="object-contain w-36 h-20 md:w-44 md:h-28"
               />
             </a>
           ))}
+          </div>
         </div>
       </div>
     </section>
