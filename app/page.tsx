@@ -19,9 +19,9 @@ export default function Home() {
         <Skills />
         <About />
         <Experience />
-        <Projects />
-        <Education />
         <Certifications />
+        <Education />
+        <Projects />
         <Awards />
         <Volunteer />
         <Contact />

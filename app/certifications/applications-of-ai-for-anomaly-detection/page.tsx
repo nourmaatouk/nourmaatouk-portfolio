@@ -1,9 +1,23 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
+
 export default function CertificationDetail() {
+  const router = useRouter();
+
   return (
     <div className="min-h-screen bg-[#f4f7f9] py-6 px-2 sm:px-8">
       <div className="max-w-6xl mx-auto bg-white p-6 sm:p-10 rounded-xl shadow-xl">
+        {/* BACK BUTTON */}
+        <button
+          onClick={() => router.push('/#certifications')}
+          className="flex items-center gap-2 px-4 py-2 text-gray-900 hover:text-blue-600 border border-gray-300 rounded-lg hover:border-blue-600 mb-8 transition-all group"
+        >
+          <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+          <span className="font-semibold">Back to Portfolio</span>
+        </button>
+
         {/* HEADER SECTION */}
         <header className="text-center mb-10">
           <p className="text-sm font-semibold text-gray-500 tracking-wider uppercase mb-1">AI Applications</p>

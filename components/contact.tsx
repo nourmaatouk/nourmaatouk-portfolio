@@ -1,117 +1,114 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Github, Linkedin, Mail, Phone, MapPin, Languages } from "lucide-react"
+"use client"
+
+import { Card, CardContent } from "@/components/ui/card"
+import { Github, Linkedin, Mail, Phone, MapPin } from "lucide-react"
 
 export function Contact() {
+  const handleEmailClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    window.location.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=nourmaatouk88@gmail.com'
+  }
+
   return (
-    <section id="contact" className="py-20 md:py-32">
-      <div className="max-w-4xl mx-auto space-y-12">
-        <div className="space-y-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-balance">Get In Touch</h2>
-          <p className="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">
-            I'm currently seeking a final-year internship (PFE) opportunity to conduct research and contribute to
-            advanced AI-driven projects. Let's connect!
-          </p>
+    <section id="contact" className="py-20 md:py-32 bg-white">
+      <div className="max-w-5xl mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">CONTACT</h2>
+          <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          <Card className="border-border">
-            <CardHeader>
-              <CardTitle className="text-xl">Contact Information</CardTitle>
-              <CardDescription>Feel free to reach out through any of these channels</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <a
-                href="mailto:nourmaatouk88@gmail.com"
-                className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors group"
-              >
-                <div className="p-2 rounded-lg bg-secondary group-hover:bg-accent/10 transition-colors">
-                  <Mail className="h-5 w-5" />
-                </div>
-                <span>nourmaatouk88@gmail.com</span>
-              </a>
-
-              <a
-                href="tel:+21694281444"
-                className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors group"
-              >
-                <div className="p-2 rounded-lg bg-secondary group-hover:bg-accent/10 transition-colors">
-                  <Phone className="h-5 w-5" />
-                </div>
-                <span>(+216) 94 281 444</span>
-              </a>
-
-              <div className="flex items-center gap-3 text-muted-foreground">
-                <div className="p-2 rounded-lg bg-secondary">
-                  <MapPin className="h-5 w-5" />
-                </div>
-                <span>Tunis, Tunisia</span>
-              </div>
-
-              <div className="flex items-center gap-3 text-muted-foreground">
-                <div className="p-2 rounded-lg bg-secondary">
-                  <Languages className="h-5 w-5" />
-                </div>
-                <span>English, French (DELF B2), Arabic</span>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border-border">
-            <CardHeader>
-              <CardTitle className="text-xl">Connect Online</CardTitle>
-              <CardDescription>Find me on these platforms</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <Button
-                asChild
-                variant="outline"
-                className="w-full justify-start gap-3 hover:border-accent hover:text-accent bg-transparent"
-              >
-                <a href="https://www.linkedin.com/in/nour--maatouk" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="h-5 w-5" />
-                  <span>LinkedIn Profile</span>
-                </a>
-              </Button>
-
-              <Button
-                asChild
-                variant="outline"
-                className="w-full justify-start gap-3 hover:border-accent hover:text-accent bg-transparent"
-              >
-                <a href="https://github.com/nour--maatouk" target="_blank" rel="noopener noreferrer">
+        {/* Two Cards */}
+        <div className="grid gap-8 md:grid-cols-2 mb-20">
+          {/* Left Card - Profile */}
+          <Card className="border-2 border-gray-900 rounded-2xl p-8">
+            <CardContent className="p-0">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Nour Maatouk</h3>
+              <p className="text-sm text-gray-600 mb-8">Computer Science Engineering Student | AI & ML Enthusiast</p>
+              
+              {/* Social Icons */}
+              <div className="flex gap-4">
+                <a
+                  href="https://github.com/nourmaatouk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full border-2 border-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all"
+                >
                   <Github className="h-5 w-5" />
-                  <span>GitHub Profile</span>
                 </a>
-              </Button>
+                <a
+                  href="https://www.linkedin.com/in/nour--maatouk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full border-2 border-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <button
+                  onClick={handleEmailClick}
+                  className="w-12 h-12 rounded-full border-2 border-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all"
+                >
+                  <Mail className="h-5 w-5" />
+                </button>
+              </div>
+            </CardContent>
+          </Card>
 
-              <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground mt-4">
-                <a href="mailto:nourmaatouk88@gmail.com">
-                  <Mail className="h-5 w-5 mr-2" />
-                  Send Email
-                </a>
-              </Button>
+          {/* Right Card - Contact Info */}
+          <Card className="border-2 border-gray-900 rounded-2xl p-8">
+            <CardContent className="p-0 space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
+                  <MapPin className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Sousse, Tunisia</p>
+                  <p className="text-sm text-gray-600">École Polytechnique de Sousse</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
+                  <Mail className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <button 
+                    onClick={handleEmailClick}
+                    className="font-semibold text-gray-900 hover:text-blue-600 transition-colors text-left"
+                  >
+                    nourmaatouk88@gmail.com
+                  </button>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
+                  <Phone className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <a 
+                    href="tel:+21694281444"
+                    className="font-semibold text-gray-900 hover:text-blue-600 transition-colors"
+                  >
+                    (+216) 94 281 444
+                  </a>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
-
-        
       </div>
 
-      <footer className="mt-20 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-        <p className="text-sm">
-          © Copyright <span className="font-medium">Nour Maatouk.</span> All Rights Reserved
-        </p>
-        <p className="text-sm mt-1">
-          Designed by{' '}
-          <a
-            href="/"
-            aria-label="Designed by Nour Maatouk"
-            className="font-medium text-accent hover:underline"
-          >
-            Nour Maatouk
-          </a>
-        </p>
+      {/* Footer */}
+      <footer className="border-t border-gray-300 pt-8 text-center">
+        <div className="max-w-5xl mx-auto px-4">
+          <p className="text-sm text-gray-900 mb-1">
+            © Copyright <strong>Nour Maatouk</strong>. All Rights Reserved
+          </p>
+          <p className="text-xs text-gray-600">
+            Designed by <a href="#" className="text-blue-600 hover:underline">Nour Maatouk</a>
+          </p>
+        </div>
       </footer>
     </section>
   )

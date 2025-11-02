@@ -1,5 +1,7 @@
-import { Calendar, Building2, ExternalLink } from "lucide-react"
-import { Separator } from "./ui/separator"
+"use client"
+
+import { Calendar, ChevronRight } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 const volunteerExperiences = [
   {
@@ -9,9 +11,7 @@ const volunteerExperiences = [
     endDate: "Sep 2025",
     description: "Responsible for contacting international speakers and startups. Coordinated directly with international speakers and contributed to making the event a success.",
     logo: "/logos/ieee-cs.png",
-    link: "https://techx.tn",
-    color: "bg-gradient-to-r from-blue-100 to-blue-50 border-blue-300",
-    button: "bg-blue-600 text-white hover:bg-blue-700"
+    slug: "guests-chief-techx-tunisia-2025",
   },
   {
     title: "Founder and Chair",
@@ -20,9 +20,7 @@ const volunteerExperiences = [
     endDate: "Feb 2025",
     description: "Led the chapter, organized events, and coordinated regular meetings.",
     logo: "/logos/ieee-eps-sight.png",
-    link: "https://ieee.org/sight",
-    color: "bg-gradient-to-r from-orange-100 to-orange-50 border-orange-300",
-    button: "bg-orange-500 text-white hover:bg-orange-600"
+    slug: "founder-and-chair-ieee-eps-sight",
   },
   {
     title: "Founder and General Secretary",
@@ -31,9 +29,6 @@ const volunteerExperiences = [
     endDate: "Jan 2025",
     description: "Managed chapter operations, documented meetings, and wrote detailed reports.",
     logo: "/logos/ieee-eps-cs.png",
-    link: "https://ieee.org/eps",
-    color: "bg-gradient-to-r from-yellow-100 to-yellow-50 border-yellow-300",
-    button: "bg-yellow-400 text-black hover:bg-yellow-500"
   },
   {
     title: "Technical Team Volunteer",
@@ -42,68 +37,70 @@ const volunteerExperiences = [
     endDate: "Jul 2023",
     description: "Participated in TCPC 2023 and TCPC 2025, supporting technical events.",
     logo: "/logos/acm-eps.png",
-    link: "https://acm.org",
-    color: "bg-gradient-to-r from-purple-100 to-purple-50 border-purple-300",
-    button: "bg-purple-600 text-white hover:bg-purple-700"
   }
 ]
 
 export function Volunteer() {
+  const router = useRouter()
+
   return (
-    <section id="volunteer" className="py-20 space-y-8">
-      <div className="max-w-3xl mx-auto px-4">
+    <section id="volunteer" className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-100 rounded-full blur-3xl opacity-30"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-100 rounded-full blur-3xl opacity-30"></div>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <header className="space-y-4 text-center mb-12">
-          <h2 className="text-2xl md:text-[2.5rem] font-bold tracking-tight">
+        <header className="space-y-2 text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
             Volunteer Experience
           </h2>
-          <p className="text-lg text-muted-foreground/80 font-light italic max-w-2xl mx-auto">
+          <p className="text-base text-gray-600">
             Contributing to the tech community through leadership and volunteer work
           </p>
         </header>
 
         {/* Experience Cards */}
-        <div className="space-y-8">
+        <div className="space-y-6">
           {volunteerExperiences.map((exp, index) => (
-            <div key={index}>
-              <div className={`group relative rounded-xl p-6 border shadow-md ${exp.color}`}>
-                <div className="flex gap-6 items-center">
-                  {/* Logo Section */}
-                  <div className="flex shrink-0 items-center justify-center w-16 h-16 rounded-lg bg-white/80 p-2 ring-1 ring-gray-200">
-                    {exp.logo ? (
-                      <img
-                        src={exp.logo}
-                        alt={`${exp.organization} logo`}
-                        className="w-full h-full object-contain"
-                      />
-                    ) : (
-                      <Building2 className="w-8 h-8 text-muted-foreground/50" />
-                    )}
-                  </div>
-                  {/* Content Section */}
-                  <div className="flex-1 space-y-2">
-                    <h3 className="text-lg font-semibold tracking-tight mb-1">{exp.title}</h3>
-                    <div className="flex items-center gap-2 text-sm text-gray-700">
-                      <span className="font-medium">{exp.organization}</span>
-                      <span className="mx-2">|</span>
-                      <Calendar className="w-4 h-4 inline" />
-                      <time>{exp.startDate} - {exp.endDate}</time>
+            <div 
+              key={index} 
+              className="group bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-lg hover:border-blue-300 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className="flex gap-4 items-start">
+                {/* Logo */}
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-2 flex items-center justify-center group-hover:shadow-md transition-shadow duration-300 border border-gray-200">
+                  <img
+                    src={exp.logo}
+                    alt={`${exp.organization} logo`}
+                    className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">
+                    {exp.title}
+                  </h3>
+                  <div className="text-sm mb-2">
+                    <p className="text-blue-600 font-medium">{exp.organization}</p>
+                    <div className="flex items-center gap-1.5 text-gray-500 mt-1">
+                      <Calendar className="w-4 h-4" />
+                      <span>{exp.startDate} - {exp.endDate}</span>
                     </div>
-                    <p className="text-gray-700 leading-relaxed mt-2">{exp.description}</p>
-                    {exp.link && (
-                      <div className="pt-2">
-                        <a
-                          href={exp.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`inline-flex items-center gap-2 text-sm px-4 py-1.5 rounded-full font-semibold transition-colors ${exp.button}`}
-                        >
-                          Read More
-                          <ExternalLink className="w-3.5 h-3.5" />
-                        </a>
-                      </div>
-                    )}
                   </div>
+                  <p className="text-sm text-gray-700 leading-relaxed mb-4">
+                    {exp.description}
+                  </p>
+                  <button 
+                    onClick={() => exp.slug && router.push(`/volunteer/${exp.slug}`)}
+                    className="inline-flex items-center gap-1 px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-sm font-medium rounded-md hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-sm hover:shadow-md group-hover:gap-2"
+                  >
+                    Read More
+                    <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                  </button>
                 </div>
               </div>
             </div>
