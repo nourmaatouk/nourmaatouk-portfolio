@@ -8,6 +8,7 @@ const technologies = [
   { name: "Docker", logo: "/logos/docker.png", wiki: "https://en.wikipedia.org/wiki/Docker_(software)" },
   { name: "XGBoost", logo: "/logos/xgboost.png", wiki: "https://en.wikipedia.org/wiki/XGBoost" },
   { name: "LangChain", logo: "/logos/langchain.png", wiki: "https://en.wikipedia.org/wiki/LangChain" },
+  { name: "LLMs", logo: "/logos/llms.png", wiki: "https://en.wikipedia.org/wiki/Large_language_model" },
   { name: "Multi-agent system", logo: "/logos/multi-agent-system.png", wiki: "https://en.wikipedia.org/wiki/Multi-agent_system" },
   { name: "Neo4j", logo: "/logos/neo4j.png", wiki: "https://en.wikipedia.org/wiki/Neo4j" },
   { name: "GraphRAG", logo: "/logos/graphrag.png", wiki: "https://en.wikipedia.org/wiki/Retrieval-augmented_generation" },
@@ -20,8 +21,7 @@ export function Skills() {
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-20">Technologies & Tools</h2>
 
-        <div className="flex justify-center">
-          <div className="inline-grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-12 gap-y-12 items-center justify-items-center">
+        <div className="flex flex-wrap justify-center gap-x-12 gap-y-12 items-center max-w-6xl mx-auto">
           {technologies.map((tech, index) => (
             <a
               key={index}
@@ -41,7 +41,6 @@ export function Skills() {
               />
             </a>
           ))}
-          </div>
         </div>
       </div>
     </section>

@@ -137,6 +137,15 @@ export function Awards() {
                 {/* Subtle accent line */}
                 <div className={`absolute top-0 left-0 right-0 h-1 ${isFirst ? 'bg-gradient-to-r from-amber-400 to-yellow-400' : isSecond ? 'bg-gradient-to-r from-gray-400 to-slate-400' : 'bg-gradient-to-r from-orange-400 to-amber-400'}`} />
                 
+                {/* Award Image */}
+                <div className="w-full h-48 overflow-hidden">
+                  <img
+                    src={`/${award.slug}.jpg`}
+                    alt={award.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+
                 <CardHeader className="pb-4 pt-6">
                   <div className="flex items-start justify-between mb-3">
                     <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-semibold border shadow-sm ${badgeColor}`}>

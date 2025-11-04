@@ -48,7 +48,7 @@ export default function CertificationDetail() {
           <div className="lg:w-3/5 xl:w-7/12 mb-8 lg:mb-0">
             <div className="bg-gray-100 p-6 rounded-xl border border-gray-200 h-96 sm:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
               <img
-                src="/certificates/nvidia-ai-anomaly-detection.png"
+                src="/applications-of-ai-for-anomaly-detection.jpg"
                 alt="Applications of AI for Anomaly Detection certificate"
                 className="max-h-full max-w-full object-contain"
                 onError={(e) => {

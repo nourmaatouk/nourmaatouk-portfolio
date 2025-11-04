@@ -32,7 +32,7 @@ export default function CertificationDetail() {
           <div className="lg:col-span-2">
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 h-[500px] flex items-center justify-center">
               <img
-                src="/certificates/cisco-ccna-switching-routing-wireless.png"
+                src="/ccna-switching-routing-and-wireless-essentials.jpg"
                 alt="CCNA: Switching, Routing, and Wireless Essentials certificate"
                 className="max-h-full max-w-full object-contain"
                 onError={(e) => {

@@ -24,11 +24,12 @@ const volunteerExperiences = [
   },
   {
     title: "Founder and General Secretary",
-    organization: "IEEE EPS CS SBC",
+    organization: "IEEE EPS CS SBC (Student Branch Chapter)",
     startDate: "Jan 2024",
     endDate: "Jan 2025",
     description: "Managed chapter operations, documented meetings, and wrote detailed reports.",
     logo: "/logos/ieee-eps-cs.png",
+    slug: "founder-and-general-secretary-ieee-eps-cs-sbc",
   },
   {
     title: "Technical Team Volunteer",
@@ -37,6 +38,7 @@ const volunteerExperiences = [
     endDate: "Jul 2023",
     description: "Participated in TCPC 2023 and TCPC 2025, supporting technical events.",
     logo: "/logos/acm-eps.png",
+    slug: "technical-team-volunteer-acm-eps",
   }
 ]
 
@@ -67,11 +69,11 @@ export function Volunteer() {
           {volunteerExperiences.map((exp, index) => (
             <div 
               key={index} 
-              className="group bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-lg hover:border-blue-300 transition-all duration-300 hover:-translate-y-1"
+              className="group bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:shadow-lg hover:border-blue-300 transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="flex gap-4 items-start">
+              <div className="flex gap-6 items-start">
                 {/* Logo */}
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-2 flex items-center justify-center group-hover:shadow-md transition-shadow duration-300 border border-gray-200">
+                <div className="flex-shrink-0 w-20 h-20 rounded-lg flex items-center justify-center group-hover:shadow-md transition-shadow duration-300">
                   <img
                     src={exp.logo}
                     alt={`${exp.organization} logo`}

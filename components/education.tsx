@@ -32,6 +32,7 @@ export function Education() {
   return (
     <section id="education" className="py-20 md:py-32">
       <div className="max-w-5xl mx-auto px-2">
+        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">Education</h2>
         <div className="bg-white dark:bg-background border border-black dark:border-border rounded-2xl p-8 md:p-16 flex flex-col items-center min-h-[80vh]" style={{boxShadow: 'none'}}>
           {/* Logo */}
           <img

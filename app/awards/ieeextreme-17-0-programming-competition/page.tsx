@@ -22,19 +22,12 @@ export default function AwardDetail() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* LEFT PANEL: Award Image */}
           <div className="lg:col-span-2">
-            <div className="bg-gradient-to-br from-gray-50 to-slate-50 border-2 border-gray-400 rounded-2xl p-12 h-[500px] flex flex-col items-center justify-center">
-              <div className="w-32 h-32 bg-gradient-to-br from-gray-400 to-slate-500 rounded-full flex items-center justify-center mb-8 shadow-xl">
-                <Trophy className="w-16 h-16 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 text-center mb-3">
-                IEEEXtreme 17.0 Programming Competition
-              </h3>
-              <p className="text-gray-600 text-center">Competition images will be uploaded soon</p>
-              <div className="flex gap-2 mt-4">
-                <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
-                <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
-                <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
-              </div>
+            <div className="bg-gradient-to-br from-gray-50 to-slate-50 border-2 border-gray-400 rounded-2xl overflow-hidden">
+              <img
+                src="/ieeextreme-17-0-programming-competition.jpg"
+                alt="IEEEXtreme 17.0 Programming Competition"
+                className="w-full h-[500px] object-cover"
+              />
             </div>
 
             {/* Competition Highlight Section */}

@@ -78,7 +78,7 @@ export function Projects() {
   return (
     <section id="projects" className="py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="space-y-4 mb-12">
+        <div className="space-y-4 mb-12 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-balance">Featured Projects</h2>
           <p className="text-lg text-muted-foreground text-pretty">
             A selection of projects showcasing expertise in AI, machine learning, computer vision, and full-stack development.
